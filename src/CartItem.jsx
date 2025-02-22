@@ -31,6 +31,9 @@ const CartItem = ({ onContinueShopping }) => {
   const handleRemove = (item) => {
     dispatch(removeItem(item.id)); // Ensure the item has a unique id
   };
+  const handleCheckoutShopping = (e) => {
+    alert('Comming soon');
+  };
 
   // Calculate total cost for a single item based on its quantity
   const calculateTotalCost = (item) => {
@@ -39,7 +42,9 @@ const CartItem = ({ onContinueShopping }) => {
 
   return (
     <div className="cart-container">
-      <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
+      <h2 style={{ color: 'black' }}>Total Cart Cost: ${calculateTotalAmount()}</h2>
+      
+      
       <div>
         {cart.map(item => (
           <div className="cart-item" key={item.id}>
@@ -47,6 +52,7 @@ const CartItem = ({ onContinueShopping }) => {
             <div className="cart-item-details">
               <div className="cart-item-name">{item.name}</div>
               <div className="cart-item-cost">{item.cost}</div>
+
               <div className="cart-item-quantity">
                 <button className="cart-item-button cart-item-button-dec" onClick={() => handleDecrement(item)}>-</button>
                 <span className="cart-item-quantity-value">{item.quantity}</span>
@@ -61,6 +67,9 @@ const CartItem = ({ onContinueShopping }) => {
       <div style={{ marginTop: '20px', color: 'black' }} className='total_cart_amount'></div>
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick={handleContinueShopping}>Continue Shopping</button>
+        <div>
+        <button className="get-started-button" onClick={handleCheckoutShopping}>Checkout</button>
+       </div>
       </div>
     </div>
   );
