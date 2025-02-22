@@ -182,7 +182,6 @@ body {
     width: 400px;
     text-align: center;
     margin: 20px;
-    border: 1px solid rgb(5, 4, 4);
     border-left: none;
     border-right: none;
 
@@ -200,13 +199,14 @@ body {
 .product-button {
     background-color: #4CAF50; /* Green */
     border: none;
+    border-radius:10px;
     color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 5px 10px;
     transition-duration: 0.4s;
     cursor: pointer;
   }
@@ -216,7 +216,8 @@ body {
   }
   
   .product-button.added-to-cart {
-    background-color: grey; /* Grey when product is added */
+    border-radius:10px;
+    background-color: rgb(46, 46, 46); /* Grey when product is added */
   }
   @media (max-width: 1200px) {
     .product-card {
